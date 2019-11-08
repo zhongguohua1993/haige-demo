@@ -1,8 +1,5 @@
 <template>
   <div>
-    <div class="home-menu">
-
-    </div>
     <div class="home-background">
       <div class="lab-desc">
         <div class="lab-name">
@@ -86,7 +83,7 @@
 
   .lab-members {
     position: absolute;
-    top: 550px;
+    top: 600px;
     width: 100%;
     display: flex;
     justify-content: center;
