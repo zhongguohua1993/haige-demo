@@ -68,7 +68,7 @@
 </script>
 
 <style scoped lang="scss">
-  .el-menu.el-menu--horizontal {
+  .el-menu {
     border: 0;
   }
 </style>

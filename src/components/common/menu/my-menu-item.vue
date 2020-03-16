@@ -17,7 +17,7 @@
         return item.hasOwnProperty('children') && Array.isArray(item.children) && item.children.length > 0
       },
       renderSubmenu (h, data) {
-        let {index, title, children} = data
+        let {index, title, children, iconClass} = data
         return h('el-submenu', {
           props: {
             index,
@@ -34,15 +34,29 @@
           }
           // this.renderMyMenuItem(h, item)
         }).concat(
-          h('span', {
-            slot: 'title'
-          }, title)
+          this.renderTitleSlot(h, title, iconClass)
         ))
       },
+      renderTitleSlot (h, title, iconClass = 'el-icon-menu') {
+        let nodes = []
+        if (iconClass) {
+          nodes.push(h('i', {
+            class: iconClass
+          }))
+        }
+        nodes.push(h('span', {}, title))
+        return h('template', {
+          slot: 'title'
+        }, nodes)
+      },
       renderMenuItem (h, data) {
+        let {title, iconClass = 'el-icon-menu'} = data
         return h('el-menu-item', {
           props: data
-        }, data.title)
+        }, [
+          h('i', {class: iconClass}),
+          h('span', {}, title)
+        ])
       },
       renderMenuItemGroup (h, data) {
         return h('el-menu-item-group', {
@@ -81,6 +95,6 @@
 
 <style scoped lang="scss">
   .group-title {
-  color: gainsboro;
+    color: gainsboro;
   }
 </style>

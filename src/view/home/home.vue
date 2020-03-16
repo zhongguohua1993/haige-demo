@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home-content">
     <div class="home-background">
       <div class="lab-desc">
         <div class="lab-name">
@@ -55,8 +55,8 @@
   }
 </script>
 <style lang="scss" scoped>
-  .home-menu{
-
+  .home-content {
+    margin: 0 auto;
   }
 
   .home-background {
@@ -64,6 +64,7 @@
     height: 600px;
     position: relative;
     background: url(../../assets/home/background.png) no-repeat;
+    background-size: 100%;
     .lab-desc {
       position: absolute;
       width: 100%;
